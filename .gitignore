@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 backend/.env
+backend/create-admin.js
+backend/db.js
+backend/index.js
+backend/init.sql
