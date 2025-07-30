@@ -1,8 +1,8 @@
 const db = require('../db');
 
-// Récupérer tous les membres
+
 exports.getAllMembres = (req, res) => {
-  db.query('SELECT * FROM membre', (err, results) => {
+  db.query('SELECT id, nom, prenom, email, telephone, promotion, role, created_at AS dateInscription FROM membre', (err, results) => {
     if (err) {
       console.error('Erreur lors de la récupération des membres :', err.message);
       return res.status(500).json({ error: 'Erreur serveur' });
@@ -11,7 +11,7 @@ exports.getAllMembres = (req, res) => {
   });
 };
 
-// Créer un nouveau membre
+
 exports.createMembre = (req, res) => {
   const { nom, prenom, email, telephone, promotion, role } = req.body;
 
@@ -33,7 +33,7 @@ exports.createMembre = (req, res) => {
   });
 };
 
-// Récupérer un membre par ID
+
 exports.getMembreById = (req, res) => {
   const id = req.params.id;
   db.query('SELECT * FROM membre WHERE id = ?', [id], (err, results) => {
@@ -48,7 +48,7 @@ exports.getMembreById = (req, res) => {
   });
 };
 
-// Supprimer un membre
+
 exports.deleteMembre = (req, res) => {
   const id = req.params.id;
   db.query('DELETE FROM membre WHERE id = ?', [id], (err) => {
@@ -60,7 +60,7 @@ exports.deleteMembre = (req, res) => {
   });
 };
 
-// Mettre à jour un membre
+
 exports.updateMembre = (req, res) => {
   const id = req.params.id;
   const { nom, prenom, email, telephone, promotion, role } = req.body;
