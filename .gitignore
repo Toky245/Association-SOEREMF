@@ -27,3 +27,4 @@ backend/create-admin.js
 backend/db.js
 backend/index.js
 backend/init.sql
+backend/init-db.js
