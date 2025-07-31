@@ -14,7 +14,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cookieParser());
 app.use(cors({
-  origin: 'http://localhost:8080',
+   origin: [
+    'http://localhost:8080',                   
+    'capacitor://localhost',                   
+    'http://localhost',                        
+    'https://association-soeremf.onrender.com' 
+  ],
   credentials: true,
 }));
 app.use(express.json());
