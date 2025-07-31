@@ -30,7 +30,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     e.preventDefault();
 
     try {
-      const res = await api.post("https://association-soeremf.onrender.com/auth/login", {
+      const res = await api.post("/auth/login", {
         email,
         password,
       },{ withCredentials: true
@@ -78,7 +78,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     }
 
     try {
-      await api.post("https://association-soeremf.onrender.com/auth/register", signupData);
+      await api.post("/auth/register", signupData);
 
       toast({
         title: "Demande envoyée!",
