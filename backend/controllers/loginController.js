@@ -54,7 +54,6 @@ exports.login = (req, res) => {
 
     return res.json({
       message: 'Connexion réussie',
-      token,
       user: {
         id: user.id,
         email: user.email,
