@@ -17,7 +17,8 @@ app.use(cors({
    origin: [
     'http://localhost:8080',                   
     'capacitor://localhost',                   
-    'http://localhost',                        
+    'http://localhost',
+    'https://association-soeremf.onrender.com',                       
    
   ],
   credentials: true,
