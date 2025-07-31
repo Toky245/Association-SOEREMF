@@ -27,7 +27,7 @@ const App = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/auth/me", {
+      const res = await axios.get("https://association-soeremf.onrender.com/auth/me", {
         withCredentials: true,
       });
 
@@ -61,7 +61,7 @@ const App = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:3000/auth/logout", {
+      await axios.get("https://association-soeremf.onrender.com/auth/logout", {
         withCredentials: true,
       });
     } catch (err) {

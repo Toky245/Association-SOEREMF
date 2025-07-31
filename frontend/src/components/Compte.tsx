@@ -34,7 +34,7 @@ const Compte = () => {
   const itemsPerPage = 6;
 
   const fetchData = () => {
-    fetch("http://localhost:3000/compte/comptes")
+    fetch("https://association-soeremf.onrender.com/compte/comptes")
       .then(res => res.json())
       .then(data => {
         const users = data.users.filter(user => !user.valide);
@@ -64,7 +64,7 @@ const Compte = () => {
   };
 
   const handleAccept = (email: string, nom: string, role: string) => {
-    fetch("http://localhost:3000/compte/valider", {
+    fetch("https://association-soeremf.onrender.com/compte/valider", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, valide: true, role }),
@@ -92,7 +92,7 @@ const Compte = () => {
   };
 
   const handleReject = (email: string, nom: string) => {
-    fetch("http://localhost:3000/compte/supprimer", {
+    fetch("https://association-soeremf.onrender.com/supprimer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

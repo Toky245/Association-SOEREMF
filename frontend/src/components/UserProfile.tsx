@@ -18,7 +18,7 @@ export interface User {
   name: string;
   email: string;
   role: string;
-  promotion: string; // Conservé pour compatibilité si besoin ailleurs
+  promotion: string; 
   telephone?: string;
   dateInscription?: string;
 }

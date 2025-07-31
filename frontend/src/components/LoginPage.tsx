@@ -30,7 +30,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/auth/login", {
+      const res = await axios.post("https://association-soeremf.onrender.com/auth/login", {
         email,
         password,
       },{ withCredentials: true
@@ -78,7 +78,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     }
 
     try {
-      await axios.post("http://localhost:3000/auth/register", signupData);
+      await axios.post("https://association-soeremf.onrender.com/auth/register", signupData);
 
       toast({
         title: "Demande envoyée!",

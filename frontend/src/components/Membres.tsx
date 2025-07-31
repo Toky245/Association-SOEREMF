@@ -74,7 +74,7 @@ const Membres = ({ currentUser }: MembresProps) => {
 
   const fetchMembres = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/membres");
+      const response = await axios.get("https://association-soeremf.onrender.com/membres");
       setMembres(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement des membres", error);
@@ -108,7 +108,7 @@ const Membres = ({ currentUser }: MembresProps) => {
 
   const handleDeleteMember = async (membreId: number, nom: string) => {
     try {
-      await axios.delete(`http://localhost:3000/membres/${membreId}`);
+      await axios.delete(`https://association-soeremf.onrender.com/membres/${membreId}`);
       setMembres(prev => prev.filter(membre => membre.id !== membreId));
       toast({
         title: "Membre supprimé",
@@ -124,7 +124,7 @@ const Membres = ({ currentUser }: MembresProps) => {
   const handleAddMember = async () => {
     try {
       if (editMode && editingId !== null) {
-        const response = await axios.put(`http://localhost:3000/membres/${editingId}`, newMember);
+        const response = await axios.put(`https://association-soeremf.onrender.com/membres/${editingId}`, newMember);
         await fetchMembres();
         toast({
           title: "Membre mis à jour",
@@ -137,7 +137,7 @@ const Membres = ({ currentUser }: MembresProps) => {
           statut: "Actif" as const,
           dateInscription: new Date().toISOString()
         };
-        const response = await axios.post("http://localhost:3000/membres", membreToAdd);
+        const response = await axios.post("https://association-soeremf.onrender.com/membres", membreToAdd);
         const addedMembre: Membre = response.data;
         setMembres(prev => [...prev, addedMembre]);
         toast({

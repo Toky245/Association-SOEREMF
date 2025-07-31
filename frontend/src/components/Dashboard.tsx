@@ -88,7 +88,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch("http://localhost:3000/dashboard/summary");
+        const res = await fetch("https://association-soeremf.onrender.com/dashboard/summary");
         if (!res.ok) throw new Error(`Erreur ${res.status}`);
         const data = await res.json();
         setStats(data);

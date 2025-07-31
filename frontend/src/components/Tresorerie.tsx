@@ -42,7 +42,7 @@ const Tresorerie = ({ currentUser }: TresorerieProps) => {
 
   const fetchRevenus = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/tresorerie/list");
+    const res = await axios.get("https://association-soeremf.onrender.com/tresorerie/list");
     const revenusFromApi: Transaction[] = res.data.map((r: any) => ({
       id: r.id,
       type: "revenu",
@@ -61,7 +61,7 @@ const Tresorerie = ({ currentUser }: TresorerieProps) => {
 
 const fetchDepenses = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/depense/list");
+    const res = await axios.get("https://association-soeremf.onrender.com/depense/list");
     const depensesFromApi: Transaction[] = res.data.map((d: any) => ({
       id: d.id,
       type: "depense",
@@ -102,7 +102,7 @@ const fetchDepenses = async () => {
       return;
     }
     try {
-      await axios.post("http://localhost:3000/tresorerie/create", {
+      await axios.post("https://association-soeremf.onrender.com/tresorerie/create", {
         source: newRevenu.source,
         montant: Number(newRevenu.montant),
         responsable: 1 
@@ -125,7 +125,7 @@ const fetchDepenses = async () => {
       return;
     }
     try {
-      await axios.post("http://localhost:3000/depense/create", {
+      await axios.post("https://association-soeremf.onrender.com/depense/create", {
         description: newDepense.description,
         montant: Number(newDepense.montant),
         responsable: 1 

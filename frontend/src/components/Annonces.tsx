@@ -54,7 +54,7 @@ const Annonces = ({ currentUser }: AnnoncesProps) => {
   const fetchAnnonces = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3000/annonces/list");
+      const response = await axios.get("https://association-soeremf.onrender.com/annonces/list");
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
@@ -67,7 +67,7 @@ const Annonces = ({ currentUser }: AnnoncesProps) => {
           annoncesValides.push(annonce);
         } else {
           // Supprimer du backend si expirée
-          await axios.delete(`http://localhost:3000/annonces/${annonce.id}`);
+          await axios.delete(`https://association-soeremf.onrender.com/annonces/${annonce.id}`);
         }
       }
 
@@ -101,7 +101,7 @@ const Annonces = ({ currentUser }: AnnoncesProps) => {
     }
 
     try {
-      await axios.post("http://localhost:3000/annonces/create", newAnnonce);
+      await axios.post("https://association-soeremf.onrender.com/annonces/create", newAnnonce);
       await fetchAnnonces();
       setNewAnnonce({
         titre: "",
