@@ -46,14 +46,15 @@ exports.login = (req, res) => {
    
     res.cookie('token', token, {
       httpOnly: true,
-      secure: true, 
-      sameSite: 'none', 
+      secure: false, 
+      sameSite: 'Lax', 
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
 
     return res.json({
       message: 'Connexion réussie',
+      token,
       user: {
         id: user.id,
         email: user.email,
