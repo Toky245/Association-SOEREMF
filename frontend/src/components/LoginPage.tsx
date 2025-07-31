@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
-
+import api from "@/lib/api";
 const logoSoeremf = "/lovable-uploads/c5d6aba5-7e98-4c61-9fda-fa60cc9c18ad.png";
 
 interface LoginPageProps {
@@ -30,7 +30,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://association-soeremf.onrender.com/auth/login", {
+      const res = await api.post("https://association-soeremf.onrender.com/auth/login", {
         email,
         password,
       },{ withCredentials: true
@@ -78,7 +78,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     }
 
     try {
-      await axios.post("https://association-soeremf.onrender.com/auth/register", signupData);
+      await api.post("https://association-soeremf.onrender.com/auth/register", signupData);
 
       toast({
         title: "Demande envoyée!",
