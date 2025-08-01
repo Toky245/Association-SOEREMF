@@ -23,6 +23,7 @@ app.use(cors({
   origin: [
     'http://localhost:8080',
     'http://localhost',
+    'https://localhost',
     'capacitor://localhost',
     'https://association-soeremf.onrender.com',
     'https://association-soeremf.vercel.app',
