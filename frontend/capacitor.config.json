@@ -1,0 +1,6 @@
+{
+  "appId": "com.soeremf.app",
+  "appName": "SOEREMF",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
