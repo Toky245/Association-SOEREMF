@@ -1,15 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import path from "node:path"; 
 import dotenv from "dotenv";
+
 
 dotenv.config();
 
 export default defineConfig(({ mode }) => ({
   base: "./",
   server: {
-    host: "::",
+    host: "0.0.0.0",
     port: 8080,
   },
   define: {
@@ -17,11 +17,11 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
+    mode === "development" && require("lovable-tagger").componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(path.resolve(), "./src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 }));
