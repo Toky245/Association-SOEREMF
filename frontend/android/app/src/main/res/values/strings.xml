@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Soeremf</string>
+    <string name="title_activity_main">Soeremf</string>
+    <string name="package_name">com.soeremf.dashboard</string>
+    <string name="custom_url_scheme">com.soeremf.dashboard</string>
+</resources>

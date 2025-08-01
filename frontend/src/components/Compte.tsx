@@ -92,7 +92,9 @@ const Compte = () => {
   };
 
   const handleReject = (email: string, nom: string) => {
+
     fetch("https://association-soeremf.onrender.com/compte/supprimer", {
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
