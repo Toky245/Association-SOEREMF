@@ -25,6 +25,7 @@ app.use(cors({
     'http://localhost',
     'capacitor://localhost',
     'https://association-soeremf.onrender.com',
+    'https://association-soeremf.vercel.app',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
