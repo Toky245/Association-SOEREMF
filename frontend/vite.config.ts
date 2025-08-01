@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import dotenv from 'dotenv';
 import { env } from "process";
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+dotenv.config();
 
 export default defineConfig(({ mode }) => ({
   base: "./", 
@@ -13,10 +13,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
  define: {
-  'import.meta.env': {
-    VITE_API_URL: JSON.stringify(env.VITE_API_URL),
-  }
+  'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL),
 },
+
   plugins: [
     react(),
     mode === "development" && componentTagger(),
